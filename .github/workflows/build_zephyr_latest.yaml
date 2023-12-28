@@ -1,0 +1,25 @@
+name: Build project for latest version
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Setup Zephyr project
+        uses: fabiobaltieri/zephyr-setup@main
+        with:
+          app-path: hello_world
+          toolchains: arm-zephyr-eabi
+      - name: build
+        run: west build hello_world -b nucleo_f767zi
+      - uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: build
+      - uses: actions/download-artifact@v3
+        with:
+          name: firmware
+          path: build
+      - run: zip -r build.zip build/
+
