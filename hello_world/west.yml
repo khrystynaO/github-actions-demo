@@ -9,9 +9,9 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
 
   projects:
-    - name: zephyr-v3.5.0
+    - name: zephyr
       remote: zephyrproject-rtos
-      revision: v3.5.0
+      revision: main
       import:
         # By using name-allowlist we can clone only the modules that are
         # strictly needed by the application.
