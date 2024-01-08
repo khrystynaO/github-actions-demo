@@ -9,7 +9,7 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
 
   projects:
-    - name: zephyr
+    - name: zephyr-v3.5.0
       remote: zephyrproject-rtos
       revision: v3.5.0
       import:
