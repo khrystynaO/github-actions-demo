@@ -12,6 +12,7 @@ jobs:
           toolchains: arm-zephyr-eabi
             # zephyr-version: v3.5.0
           manifest-file: hello_world/west_v3.5.0.yaml
+          app-path: hello_world
       - name: build
         run: west build hello_world -b nucleo_f767zi
 
