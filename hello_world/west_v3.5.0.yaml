@@ -5,11 +5,10 @@ manifest:
   self:
     west-commands: scripts/west-commands.yml
   remotes:
-    - name: zephyrproject-rtos
+    - name: zephyrproject-rtos/zephyr
       url-base: https://github.com/zephyrproject-rtos
 
   projects:
-    - name: zephyr
       remote: zephyrproject-rtos
       revision: v3.5.0
       import:
