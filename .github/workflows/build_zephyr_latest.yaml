@@ -10,17 +10,8 @@ jobs:
         uses: khrystynaO/zephyr-setup@khrystynaO/feature/manifest-file
         with:
           toolchains: arm-zephyr-eabi
-          manifest-file: hello_world/west.yml
+          zephyr-version: v3.5.0
+            # manifest-file: hello_world/west.yml
       - name: build
         run: west build hello_world -b nucleo_f767zi
-      - uses: actions/upload-artifact@v3
-        with:
-          name: firmware
-          path: build
-      - uses: actions/download-artifact@v3
-        with:
-          name: firmware
-          path: build
-      - run: zip -r build.zip build/
-
 
